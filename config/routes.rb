@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'homes#top'
   get '/home/about' => 'homes#about'
   resources :books, only: [:new, :create, :index, :show, :edit, :update, :destroy] do
-    resources :likes, only: [:create, :destroy]
+    resource :likes, only: [:create, :destroy]
     resources :book_comments, only: [:create, :destroy]
   end
   resources :users, only: [:index, :show, :edit, :update]
